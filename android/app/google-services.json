@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "504108010568",
+    "project_id": "traveleing-app",
+    "storage_bucket": "traveleing-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:504108010568:android:4ce3626493876abf9adc7d",
+        "android_client_info": {
+          "package_name": "com.example.traveler"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFx_rzDB8f2Hqi6VGg4p8nIcOXHwtITio"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
