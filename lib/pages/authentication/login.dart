@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:traveler/pages/authentication/forgot_password.dart';
 import 'package:traveler/pages/authentication/sign_in.dart';
+import 'package:traveler/pages/home%20.dart';
+import 'package:traveler/services/auth.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -17,6 +19,34 @@ final TextEditingController _passwordController = TextEditingController();
 
 final _formKey = GlobalKey<FormState>();
 bool _isLoading = false;
+
+Future<void> _login() async {
+  if (!_formKey.currentState!.validate()) {
+    return;
+  }
+
+  setState(() {
+    _isLoading = true;
+  });
+
+  try {
+    final email = _emailController.text.trim();
+    final password =_passwordController.text.trim();
+
+    await AuthServices().loginUser(email: email, password:password);
+
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => const Home()),
+    );
+  } catch (e) {
+    print("User create error: $e");
+  } finally {
+    setState(() {
+      _isLoading = false;
+    });
+  }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +89,7 @@ bool _isLoading = false;
               _isLoading
                   ? const CircularProgressIndicator()
                   : ElevatedButton(
-                      onPressed:(){},
+                      onPressed:_login,
                       child: const Text('Login'),
                     ),
               const SizedBox(height: 20),

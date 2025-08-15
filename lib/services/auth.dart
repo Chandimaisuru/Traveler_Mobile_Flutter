@@ -7,7 +7,7 @@ class AuthServices{
 
   final FirebaseAuth _auth = FirebaseAuth.instance ;
 
-
+// register
   Future <void> registerUser({ required String email , required String password })async {
   
     try{
@@ -15,6 +15,15 @@ class AuthServices{
     }
     catch (error){
      print("Create Account Error $error"); 
+    }
+  }
+
+  // Login
+  Future <void> loginUser({ required String email , required String password })async{
+    try{
+      await _auth.signInWithEmailAndPassword(email: email, password: password);
+    }catch(e){
+      print("login error $e");
     }
   }
 

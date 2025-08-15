@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:traveler/pages/authentication/sign_in.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -31,6 +32,10 @@ class _HomeState extends State<Home> {
                         elevation:3.0,
                         borderRadius: BorderRadius.circular(60),
                         child: GestureDetector(
+                          onTap:(){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>SignIn()));
+                          } ,
+                          
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(60),
                             child: Image.asset("assets/boy.jpg",
