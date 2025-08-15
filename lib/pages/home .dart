@@ -30,12 +30,14 @@ class _HomeState extends State<Home> {
                       Material(
                         elevation:3.0,
                         borderRadius: BorderRadius.circular(60),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(60),
-                          child: Image.asset("assets/boy.jpg",
-                            width:50,
-                            height: 50,
-                            fit: BoxFit.cover,
+                        child: GestureDetector(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(60),
+                            child: Image.asset("assets/boy.jpg",
+                              width:50,
+                              height: 50,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),

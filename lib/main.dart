@@ -1,8 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:traveler/firebase_options.dart';
-import 'package:traveler/pages/home%20.dart';
-import 'package:traveler/pages/top_places.dart';
+import 'package:traveler/pages/authentication/sign_in.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); 
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
     
-      home: TopPlaces()
+      home: SignIn()
     );
   }
 }
